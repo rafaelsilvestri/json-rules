@@ -1,0 +1,12 @@
+{
+  "validate": {
+    "isValid": true,
+    "errors": [
+      {
+        "status": 400,
+        "cause": "the_cause_of_error",
+        "message": "Oops! Something went wrong!!!"
+      }
+    ]
+  }
+}

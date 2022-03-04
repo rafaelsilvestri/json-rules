@@ -1,0 +1,47 @@
+{
+  "defaults": [],
+  "specifics": [
+    {
+      "name": "FooValidator",
+      "description": "make a request to google.com",
+      "onStep": "step1",
+      "type": "xpto",
+      "processName": "process_xpto",
+      "validator": {
+        "name": "http",
+        "args": {
+          "endpoint": "https://www.google.com",
+          "timeout": 200
+        }
+      }
+    },
+    {
+      "name": "FooValidator",
+      "description": "make a request to an nonexistent page and return an error",
+      "onStep": "step1",
+      "type": "xpto",
+      "processName": "return_404",
+      "validator": {
+        "name": "http",
+        "args": {
+          "endpoint": "https://www.google.com/xpto",
+          "timeout": 200
+        }
+      }
+    },
+    {
+      "name": "BarValidator",
+      "description": "invoke a implementation class to perform the validation",
+      "onStep": "step2",
+      "type": "bar",
+      "processName": "process_bar",
+      "validator": {
+        "name": "BarValidator",
+        "args": {
+          "arg1": "foo",
+          "arg2": "bar"
+        }
+      }
+    }
+  ]
+}

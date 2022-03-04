@@ -1,0 +1,48 @@
+[
+  {
+    "name": "FooValidator",
+    "description": "make a request to a fake api",
+    "applyTo": {
+      "onStep": "step1",
+      "type": "xpto",
+      "processName": "process_xpto"
+    },
+    "validator": {
+      "name": "http",
+      "args": {
+        "endpoint": "https://fakestoreapi.com/products/1"
+      }
+    }
+  },
+  {
+    "name": "FooValidator",
+    "description": "make a request to a fake api and return 404",
+    "applyTo": {
+      "onStep": "step1",
+      "type": "xpto",
+      "processName": "return_404"
+    },
+    "validator": {
+      "name": "http",
+      "args": {
+        "endpoint": "https://fakestoreapi.com/product_not_found"
+      }
+    }
+  },
+  {
+    "name": "BarValidator",
+    "description": "invoke a implementation class to perform the validation",
+    "applyTo": {
+      "onStep": "step2",
+      "type": "bar",
+      "processName": "process_bar"
+    },
+    "validator": {
+      "name": "BarValidator",
+      "args": {
+        "arg1": "foo",
+        "arg2": "bar"
+      }
+    }
+  }
+]
