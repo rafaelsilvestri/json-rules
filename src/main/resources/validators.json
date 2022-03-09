@@ -10,7 +10,7 @@
     "validator": {
       "name": "http",
       "args": {
-        "endpoint": "https://fakestoreapi.com/products/1"
+        "endpoint": "https://my-json-server.typicode.com/rafaelsilvestri/json-rules/validate"
       }
     }
   },

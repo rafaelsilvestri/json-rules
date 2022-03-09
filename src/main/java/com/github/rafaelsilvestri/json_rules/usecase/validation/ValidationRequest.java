@@ -1,22 +1,20 @@
 package com.github.rafaelsilvestri.json_rules.usecase.validation;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class ValidationRequest {
 
-  String onStep;
-  String processName;
-  String type;
+    String onStep;
+    String processName;
+    String type;
 
-  // just simple data received and used on validation phase
-  String foo;
-  String bar;
+    // simple data received and used on validation phase
+    String foo;
+    String bar;
 
 }

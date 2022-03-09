@@ -1,6 +1,9 @@
 {
-  "validate": {
-    "isValid": true,
+  "valid": {
+    "isValid": true
+  },
+  "invalid": {
+    "isValid": false,
     "errors": [
       {
         "status": 400,

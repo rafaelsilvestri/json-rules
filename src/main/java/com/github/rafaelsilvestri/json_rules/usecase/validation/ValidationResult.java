@@ -1,20 +1,38 @@
 package com.github.rafaelsilvestri.json_rules.usecase.validation;
 
 import java.util.List;
+
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.Singular;
 
 /**
  * The output produced by the validator implementation that contains the status of the validation
  * and a collection of errors if the validation failed.
  */
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class ValidationResult {
 
-  private final boolean isValid;
+    boolean isValid;
 
-  @Singular
-  private final List<String> errors; // todo: substituir string por classe de erro conhecida
+    @Singular
+    List<Error> errors;
+
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    public static class Error {
+        int status;
+        String cause;
+        String message;
+    }
 }

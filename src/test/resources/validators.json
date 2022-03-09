@@ -1,6 +1,21 @@
 [
   {
-    "name": "FooValidator",
+    "name": "Http Validator Valid",
+    "description": "make a request to a fake api",
+    "applyTo": {
+      "onStep": "step1",
+      "type": "xpto",
+      "processName": "process_valid"
+    },
+    "validator": {
+      "name": "http",
+      "args": {
+        "endpoint": "https://my-json-server.typicode.com/rafaelsilvestri/json-rules/valid"
+      }
+    }
+  },
+  {
+    "name": "Http Validator Invalid",
     "description": "make a request to a fake api",
     "applyTo": {
       "onStep": "step1",
@@ -10,12 +25,12 @@
     "validator": {
       "name": "http",
       "args": {
-        "endpoint": "https://fakestoreapi.com/products/1"
+        "endpoint": "https://my-json-server.typicode.com/rafaelsilvestri/json-rules/invalid"
       }
     }
   },
   {
-    "name": "FooValidator",
+    "name": "Http Validator 404",
     "description": "make a request to a fake api and return 404",
     "applyTo": {
       "onStep": "step1",
@@ -30,7 +45,7 @@
     }
   },
   {
-    "name": "BarValidator",
+    "name": "BarValidator Valid",
     "description": "invoke a implementation class to perform the validation",
     "applyTo": {
       "onStep": "step2",
@@ -43,6 +58,18 @@
         "arg1": "foo",
         "arg2": "bar"
       }
+    }
+  },
+  {
+    "name": "BarValidator Invalid",
+    "description": "invoke a implementation class to perform the validation that fails",
+    "applyTo": {
+      "onStep": "stepInvalid",
+      "type": "bar",
+      "processName": "process_bar"
+    },
+    "validator": {
+      "name": "BarValidator"
     }
   }
 ]

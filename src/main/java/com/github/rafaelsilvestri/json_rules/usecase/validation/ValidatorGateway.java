@@ -4,5 +4,5 @@ import java.util.Optional;
 
 public interface ValidatorGateway {
 
-  Optional<Validator> findValidator(ValidationRequest validationRequest);
+    Optional<Validator> findValidator(ValidationRequest validationRequest);
 }
