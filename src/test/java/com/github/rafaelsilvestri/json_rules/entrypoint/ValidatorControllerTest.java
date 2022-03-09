@@ -96,7 +96,7 @@ class ValidatorControllerTest {
         // then
         result
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.valid", is(true)));
+                .andExpect(jsonPath("$.isValid", is(true)));
     }
 
     @Test

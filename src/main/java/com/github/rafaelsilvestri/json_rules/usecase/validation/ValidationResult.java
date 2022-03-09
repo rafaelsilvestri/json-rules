@@ -2,6 +2,7 @@ package com.github.rafaelsilvestri.json_rules.usecase.validation;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,6 +21,7 @@ import lombok.Singular;
 @Builder
 public class ValidationResult {
 
+    @JsonProperty("isValid")
     boolean isValid;
 
     @Singular
